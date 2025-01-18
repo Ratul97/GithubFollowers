@@ -11,7 +11,7 @@ class SearchVC: UIViewController {
 
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()
-    let getFollowersButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    let followersButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,15 +66,15 @@ class SearchVC: UIViewController {
     }
     
     private func configureGetFollowersButton() {
-        view.addSubview(getFollowersButton)
-        getFollowersButton.addTarget(self, action: #selector(pushFollowersListVC), for: .touchUpInside)
-        getFollowersButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(followersButton)
+        followersButton.addTarget(self, action: #selector(pushFollowersListVC), for: .touchUpInside)
+        followersButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            getFollowersButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-            getFollowersButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            getFollowersButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            getFollowersButton.heightAnchor.constraint(equalToConstant: 50)
+            followersButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            followersButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            followersButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            followersButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
