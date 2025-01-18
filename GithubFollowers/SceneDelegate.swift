@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         
         UINavigationBar.appearance().backgroundColor = .systemGray
-        
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
