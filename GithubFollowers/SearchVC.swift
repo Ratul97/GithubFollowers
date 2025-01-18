@@ -27,6 +27,13 @@ class SearchVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    @objc private func pushFollowersListVC() {
+        let vc = FollowersListVC()
+        vc.username = usernameTextField.text
+        vc.title = usernameTextField.text
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     private func createTapGestureHandler() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -60,6 +67,7 @@ class SearchVC: UIViewController {
     
     private func configureGetFollowersButton() {
         view.addSubview(getFollowersButton)
+        getFollowersButton.addTarget(self, action: #selector(pushFollowersListVC), for: .touchUpInside)
         getFollowersButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -73,7 +81,7 @@ class SearchVC: UIViewController {
 
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(textField.text!)
+        pushFollowersListVC()
         return true
     }
 }
